@@ -1,6 +1,8 @@
 package vn.ute.baitap03;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -23,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-
         ConstraintLayout bg= findViewById(R.id.main);
         ArrayList<Integer> arrayList = new ArrayList<>();
         arrayList.add(R.drawable.pop_1);
@@ -51,6 +52,20 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        Button bttLinear = findViewById(R.id.button);
+        bttLinear.setOnClickListener(v -> {
+            // Tạo Intent để chuyển sang AnThanhTieuDeAndroid
+            Intent intent = new Intent(MainActivity.this, LinearActivity.class);
+            startActivity(intent);
+        });
+
+        Button bttLinear2 = findViewById(R.id.button2);
+        bttLinear2.setOnClickListener(v -> {
+            // Tạo Intent để chuyển sang AnThanhTieuDeAndroid
+            Intent intent = new Intent(MainActivity.this, Linear2Activity.class);
+            startActivity(intent);
         });
     }
 }
